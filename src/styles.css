@@ -1,5 +1,3 @@
-body {
-}
 h1,
 h5 {
   text-align: center;
@@ -65,4 +63,12 @@ div.current-weather .card-body {
 
 .search-input:focus {
   outline-color: blueviolet;
+}
+.code-link {
+  text-decoration: none;
+  color: rgba(164, 115, 206, 0.7);
+}
+.code-link:hover {
+  text-decoration: none;
+  color: rgba(164, 115, 206);
 }

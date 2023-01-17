@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles.css">
+    <script
+      src="https://kit.fontawesome.com/dac683156e.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>Weather</title>
+  </head>
+  <body>
+    <div class="container">
+
+          <form class="search-bar" id="city-search-bar">
+            <input type="search" class = "search-input" placeholder="enter city name"   id= "city-search-input"/>
+            <button type="submit" class="btn btn-outline-secondary btn-sm" id="search-button">
+              search
+            </button>
+             <button type="button" class="btn btn-outline-secondary btn-sm gps-button" id="geolocation-button">
+            <i class="fa-solid fa-location-crosshairs"></i>   
+          </button>
+          </form>
+  
+      <div class="toggle"><input type="checkbox"  class="check-box" id= "checkbox"/> °F / °C</div>
+      <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
+<label class="btn btn-outline-light" for="option1">°F</label>
+
+<input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+<label class="btn btn-outline-light" for="option2">°C</label>
+
+      <h1 class="city" id="current-city">
+        <i class="fa-solid fa-location-dot location gps-emoji" id = "location-emoji"></i
+        > Denver
+        </h1>
+
+      <h5 class="date" id = "current-date">Thursday, October 13th</h5>
+      
+        <div class="card text-center current-weather" style="width: 18rem">
+          <img src="images/partly-cloudy.svg" class="card-img-top current-weather-img" alt="sun" />
+          <div class="card-body">
+            <p class="card-title current-temp" id="temp-high">68 °F</p>
+            <p class="card-text current-low" id = "temp-high-low">55° / 41°</p>
+          </div>
+        </div>
+        
+      <div class="row weekly-forcast">
+        <div class="col-1"></div>
+        <div class="col-2 day1">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Friday</h5>
+              <p class="card-text">
+                59 °F
+                <img
+                  src="images/clouds_windy_sunny.svg"
+                  width="50px"
+                  alt="windy"
+                /><br />
+                38 °F
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2 day2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Saturday</h5>
+              <p class="card-text">
+                66 °F
+                <img
+                  src="images/sun_sunny.svg"
+                  width="50px"
+                  alt="sunny"
+                /><br />
+                41 °F
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2 day3">
+          <div class="card text-center" >
+            <div class="card-body">
+              <h5 class="card-title">Sunday</h5>
+              <p class="card-text">
+                70 °F
+                <img
+                  src="images/partly-cloudy.svg"
+                  width="50px"
+                  alt="partly-cloudy"
+                /><br />
+                42 °F
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2 day4">
+          <div class="card text-center" style=>
+            <div class="card-body">
+              <h5 class="card-title">Monday</h5>
+              <p class="card-text">
+                75 °F
+                <img src="images/cloudy.svg" width="50px" alt="cloudy" /><br />
+                45 °F
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2 day5">
+          <div class="card text-center" >
+            <div class="card-body">
+              <h5 class="card-title">Tuesday</h5>
+              <p class="card-text">
+                76 °F
+                <img
+                  src="images/clouds_rain_storm_thunder.svg"
+                  width="50px"
+                  alt="thunder-storms"
+                /><br />
+                42 °F
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+      <div class="coded-by"> 
+        <p>Coded by Dani Shotwell</p>
+      </div>
+    </div>
+  <script src="src/index.js">
+	</script>  
+  </body>
+</html>

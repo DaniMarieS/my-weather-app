@@ -1,0 +1,68 @@
+body {
+}
+h1,
+h5 {
+  text-align: center;
+}
+h1 {
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.24);
+}
+
+div.current-weather {
+  display: block;
+  margin: 50px auto;
+  margin-bottom: 110px;
+  border-radius: 50%;
+  padding: 25px;
+  border-color: rgba(164, 115, 206, 0.7);
+  border-width: 3px;
+  box-shadow: 5px 2px 33px 1px;
+}
+div.weekly-forcast .card {
+  border-radius: 80px 80px;
+  border-color: rgba(164, 115, 206, 0.7);
+  border-width: 3px;
+  box-shadow: 5px 2px 33px 1px;
+}
+
+div.weekly-forcast {
+  margin-bottom: 100px;
+}
+
+div.current-weather .card-body {
+  padding-top: 0px;
+}
+.search-bar {
+  text-align: right;
+  margin-top: 18px;
+}
+.search-input {
+  border-radius: 5px;
+  border-width: 1px;
+  padding: 2.5px;
+}
+.gps-emoji {
+  font-size: 24px;
+}
+.current-weather-img {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 0px;
+}
+.current-temp {
+  font-size: 50px;
+  line-height: 35px;
+  text-shadow: 4px 3px 2px rgba(0, 0, 0, 0.24);
+}
+.current-low {
+  font-size: 25px;
+  text-shadow: 4px 3px 2px rgba(0, 0, 0, 0.24);
+}
+.coded-by {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.search-input:focus {
+  outline-color: blueviolet;
+}

@@ -56,7 +56,7 @@ function showCityWeather(response) {
   currentDateTime.innerHTML = formatDate(response.data.dt * 1000);
   showCurrentTemp.innerHTML = `${currentTemp} °F`;
   descriptionElement.innerHTML = response.data.weather[0].description;
-  highLowTemp.innerHTML = `${highTemp}° / ${lowTemp}°`;
+  highLowTemp.innerHTML = `H: ${highTemp}° L: ${lowTemp}°`;
   console.log(response.data);
 }
 function search(event) {

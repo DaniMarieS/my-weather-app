@@ -48,12 +48,14 @@ function showCityWeather(response) {
   let lowTemp = Math.round(response.data.main.temp_min);
   let highTemp = Math.round(response.data.main.temp_max);
   let showCurrentTemp = document.querySelector("#temp-high");
+  let descriptionElement = document.querySelector("#weather-description");
   let highLowTemp = document.querySelector("#temp-high-low");
   let showCity = document.querySelector("#current-city");
   let currentDateTime = document.querySelector("#current-date");
   showCity.innerHTML = `${cityName}`;
   currentDateTime.innerHTML = formatDate(response.data.dt * 1000);
   showCurrentTemp.innerHTML = `${currentTemp} °F`;
+  descriptionElement.innerHTML = response.data.weather[0].description;
   highLowTemp.innerHTML = `${highTemp}° / ${lowTemp}°`;
   console.log(response.data);
 }

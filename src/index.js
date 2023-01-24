@@ -1,8 +1,7 @@
 // Date & Time
 
-let todaysDate = new Date();
-
-function formatDate(date, time) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let days = [
     "Sunday",
     "Monday",
@@ -38,11 +37,8 @@ function formatDate(date, time) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let formattedDate = `${currentDay}, ${currentMonth} ${currentDate} | ${hour}:${minutes}`;
-  return formattedDate;
+  return `${currentDay}, ${currentMonth} ${currentDate} | ${hour}:${minutes}`;
 }
-let currentDateTime = document.querySelector("#current-date");
-currentDateTime.innerHTML = formatDate(todaysDate);
 
 // City Search Bar
 
@@ -54,7 +50,9 @@ function showCityWeather(response) {
   let showCurrentTemp = document.querySelector("#temp-high");
   let highLowTemp = document.querySelector("#temp-high-low");
   let showCity = document.querySelector("#current-city");
+  let currentDateTime = document.querySelector("#current-date");
   showCity.innerHTML = `${cityName}`;
+  currentDateTime.innerHTML = formatDate(response.data.dt * 1000);
   showCurrentTemp.innerHTML = `${currentTemp} °F`;
   highLowTemp.innerHTML = `${highTemp}° / ${lowTemp}°`;
   console.log(response.data);

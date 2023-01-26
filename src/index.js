@@ -67,16 +67,19 @@ function showCityWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
   );
 }
-function search(event) {
-  event.preventDefault();
-  let city = document.querySelector("#city-search-input").value;
+function search(city) {
   let apiKey = "1e684f713ecf64c09805b72e982eb3d9";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
   axios.get(apiUrl).then(showCityWeather);
 }
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-search-input");
+  search(cityInput.value);
+}
 
 let citySearch = document.querySelector("#city-search-bar");
-citySearch.addEventListener("submit", search);
+citySearch.addEventListener("submit", handleSubmit);
 
 // Geolocation button
 function showWeather(response) {

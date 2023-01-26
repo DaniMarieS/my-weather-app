@@ -57,7 +57,6 @@ function showCityWeather(response) {
   showCurrentTemp.innerHTML = `${currentTemp} °F`;
   descriptionElement.innerHTML = response.data.weather[0].description;
   highLowTemp.innerHTML = `H: ${highTemp}° L: ${lowTemp}°`;
-  console.log(response.data);
 }
 function search(event) {
   event.preventDefault();
@@ -79,10 +78,11 @@ function showWeather(response) {
   let showCurrentTemp = document.querySelector("#temp-high");
   let highLowTemp = document.querySelector("#temp-high-low");
   let showCity = document.querySelector("#current-city");
+  let currentDateTime = document.querySelector("#current-date");
+  currentDateTime.innerHTML = formatDate(response.data.dt * 1000);
   showCity.innerHTML = `${cityName}`;
   showCurrentTemp.innerHTML = `${currentTemp} °F`;
   highLowTemp.innerHTML = `${highTemp}° / ${lowTemp}°`;
-  console.log(response.data);
 }
 
 function retrievePosition(position) {

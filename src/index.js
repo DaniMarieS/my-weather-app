@@ -52,8 +52,18 @@ function showCityWeather(response) {
   let highLowTemp = document.querySelector("#temp-high-low");
   let showCity = document.querySelector("#current-city");
   let currentDateTime = document.querySelector("#current-date");
+  let weatherIcon = document.querySelector("#weather-icon");
+
   showCity.innerHTML = `${cityName}`;
   currentDateTime.innerHTML = formatDate(response.data.dt * 1000);
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  weatherIcon.setAttribute(
+    "alt",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
+  );
   showCurrentTemp.innerHTML = `${currentTemp} °F`;
   descriptionElement.innerHTML = response.data.weather[0].description;
   highLowTemp.innerHTML = `H: ${highTemp}° L: ${lowTemp}°`;

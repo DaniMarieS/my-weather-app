@@ -44,7 +44,6 @@ function formatDate(timestamp) {
 
 function showCityWeather(response) {
   let cityName = response.data.name;
-  let currentTemp = Math.round(response.data.main.temp);
   let lowTemp = Math.round(response.data.main.temp_min);
   let highTemp = Math.round(response.data.main.temp_max);
   let showCurrentTemp = document.querySelector("#temp-high");
@@ -55,7 +54,8 @@ function showCityWeather(response) {
   let weatherIcon = document.querySelector("#weather-icon");
   showCity.innerHTML = `${cityName}`;
   currentDateTime.innerHTML = formatDate(response.data.dt * 1000);
-  showCurrentTemp.innerHTML = `${currentTemp} °F`;
+  fahrenheitTemperature = response.data.main.temp;
+  showCurrentTemp.innerHTML = Math.round(fahrenheitTemperature);
   descriptionElement.innerHTML = response.data.weather[0].description;
   highLowTemp.innerHTML = `H: ${highTemp}° L: ${lowTemp}°`;
   weatherIcon.setAttribute(
@@ -95,7 +95,7 @@ function showWeather(response) {
   let weatherIcon = document.querySelector("#weather-icon");
   currentDateTime.innerHTML = formatDate(response.data.dt * 1000);
   showCity.innerHTML = `${cityName}`;
-  showCurrentTemp.innerHTML = `${currentTemp} °F`;
+  showCurrentTemp.innerHTML = `${currentTemp}`;
   descriptionElement.innerHTML = response.data.weather[0].description;
   highLowTemp.innerHTML = `${highTemp}° / ${lowTemp}°`;
   weatherIcon.setAttribute(
@@ -125,19 +125,25 @@ let geolocationButton = document.querySelector("#geolocation-button");
 geolocationButton.addEventListener("click", findCurrentLocation);
 // °F/C change
 
-function degreesC(event) {
+function displayCelciusTemperature(event) {
   event.preventDefault();
-  let displayHighTemp = document.querySelector("#temp-high");
-  let displayLowTemp = document.querySelector("#temp-low");
-
-  if (checkBox.checked) {
-    displayHighTemp.innerHTML = `20 °C`;
-    displayLowTemp.innerHTML = `5 °C`;
-  } else {
-    displayHighTemp.innerHTML = `68 °F`;
-    displayLowTemp.innerHTML = `41 °F`;
-  }
+  let celciusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
+  let showCurrentTemp = document.querySelector("#temp-high");
+  showCurrentTemp.innerHTML = Math.round(celciusTemperature);
 }
 
-let checkBox = document.querySelector("#checkbox");
-checkBox.addEventListener("change", degreesC);
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let showCurrentTemp = document.querySelector("#temp-high");
+  showCurrentTemp.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let fahrenheitTemperature = null;
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", displayCelciusTemperature);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+search("Denver");

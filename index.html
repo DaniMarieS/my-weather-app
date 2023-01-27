@@ -36,11 +36,6 @@
           </form>
   
       <div class="toggle"><input type="checkbox"  class="check-box" id= "checkbox"/> °F / °C</div>
-      <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-<label class="btn btn-outline-light" for="option1">°F</label>
-
-<input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-<label class="btn btn-outline-light" for="option2">°C</label>
 
       <h1 class="city" id="current-city">
         <i class="fa-solid fa-location-dot location gps-emoji" id = "location-emoji"></i
@@ -52,7 +47,7 @@
         <div class="card text-center current-weather" style="width: 18rem">
           <img src="images/partly-cloudy.svg" class="card-img-top current-weather-img" alt="sun" id ="weather-icon"/>
           <div class="card-body">
-            <p class="card-title current-temp" id="temp-high">68 °F</p>
+            <p class="card-title current-temp" ><span id="temp-high">68</span><span class = "degree-units"><a href= "#" id = "fahrenheit-link">°F</a> | <a href = "#" id = "celcius-link">°C</a></span></p>
             <p class ="card-text description" id="weather-description"> Sunny</p>
             <p class="card-text current-low" id = "temp-high-low">H: 55° L: 41°</p>
           </div>

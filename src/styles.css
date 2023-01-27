@@ -60,6 +60,11 @@ div.current-weather .card-body {
   font-size: 45px;
   line-height: 20px;
 }
+.degree-units {
+  font-size: medium;
+  position: relative;
+  top: -20px;
+}
 .description {
   font-size: 20px;
   text-transform: capitalize;

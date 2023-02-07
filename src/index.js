@@ -28,7 +28,6 @@ function formatDate(timestamp) {
   let currentDay = days[date.getDay()];
   let currentMonth = months[date.getMonth()];
   let currentDate = date.getDate();
-  let currentYear = date.getFullYear();
   let hour = date.getHours();
   if (hour < 10) {
     hour = `0${hour}`;
@@ -37,7 +36,7 @@ function formatDate(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  return `${currentDay}, ${currentMonth} ${currentDate} | ${hour}:${minutes}`;
+  return `${currentDay} ${hour}:${minutes}`;
 }
 
 // City Search Bar

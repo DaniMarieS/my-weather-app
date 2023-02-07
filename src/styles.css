@@ -53,7 +53,16 @@ div.current-weather .card-body {
 .gps-emoji {
   font-size: 24px;
 }
-
+.city {
+  margin-bottom: 0px;
+}
+.update {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.date {
+  font-size: 20px;
+}
 .current-temp {
   font-size: 45px;
   line-height: 20px;

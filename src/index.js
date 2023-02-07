@@ -46,8 +46,10 @@ function showCityWeather(response) {
   let cityName = response.data.name;
   let lowTemp = Math.round(response.data.main.temp_min);
   let highTemp = Math.round(response.data.main.temp_max);
+  let currentWindSpeed = Math.round(response.data.wind.speed);
   let showCurrentTemp = document.querySelector("#temp-high");
   let descriptionElement = document.querySelector("#weather-description");
+  let windElement = document.querySelector("#wind-speed");
   let highLowTemp = document.querySelector("#temp-high-low");
   let showCity = document.querySelector("#current-city");
   let currentDateTime = document.querySelector("#current-date");
@@ -57,6 +59,7 @@ function showCityWeather(response) {
   fahrenheitTemperature = response.data.main.temp;
   showCurrentTemp.innerHTML = Math.round(fahrenheitTemperature);
   descriptionElement.innerHTML = response.data.weather[0].description;
+  windElement.innerHTML = `${currentWindSpeed} mph`;
   highLowTemp.innerHTML = `H: ${highTemp}° L: ${lowTemp}°`;
   weatherIcon.setAttribute(
     "src",
@@ -86,8 +89,10 @@ function showWeather(response) {
   let cityName = response.data.name;
   let currentTemp = Math.round(response.data.main.temp);
   let descriptionElement = document.querySelector("#weather-description");
+  let windElement = document.querySelector("#wind-speed");
   let lowTemp = Math.round(response.data.main.temp_min);
   let highTemp = Math.round(response.data.main.temp_max);
+  let currentWindSpeed = Math.round(response.data.wind.speed);
   let showCurrentTemp = document.querySelector("#temp-high");
   let highLowTemp = document.querySelector("#temp-high-low");
   let showCity = document.querySelector("#current-city");
@@ -97,7 +102,8 @@ function showWeather(response) {
   showCity.innerHTML = `${cityName}`;
   showCurrentTemp.innerHTML = `${currentTemp}`;
   descriptionElement.innerHTML = response.data.weather[0].description;
-  highLowTemp.innerHTML = `${highTemp}° / ${lowTemp}°`;
+  windElement.innerHTML = `${currentWindSpeed} mph`;
+  highLowTemp.innerHTML = `H: ${highTemp}°  L: ${lowTemp}°`;
   weatherIcon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`

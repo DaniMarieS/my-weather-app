@@ -65,6 +65,14 @@ div.current-weather .card-body {
   position: relative;
   top: -20px;
 }
+.current-weather .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+.current-weather .active:hover {
+  text-decoration: none;
+}
 .description {
   font-size: 20px;
   text-transform: capitalize;

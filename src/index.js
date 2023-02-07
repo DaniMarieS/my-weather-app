@@ -133,6 +133,8 @@ geolocationButton.addEventListener("click", findCurrentLocation);
 
 function displayCelciusTemperature(event) {
   event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celciusLink.classList.add("active");
   let celciusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
   let showCurrentTemp = document.querySelector("#temp-high");
   showCurrentTemp.innerHTML = Math.round(celciusTemperature);
@@ -140,6 +142,8 @@ function displayCelciusTemperature(event) {
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
+  fahrenheitLink.classList.add("active");
+  celciusLink.classList.remove("active");
   let showCurrentTemp = document.querySelector("#temp-high");
   showCurrentTemp.innerHTML = Math.round(fahrenheitTemperature);
 }

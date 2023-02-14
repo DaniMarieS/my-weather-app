@@ -155,4 +155,11 @@ celciusLink.addEventListener("click", displayCelciusTemperature);
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
+// weekly forecast
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = "forecast";
+}
+
 search("Denver");
+displayForecast();

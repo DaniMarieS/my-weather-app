@@ -23,14 +23,14 @@ div.current-weather {
   border-width: 3px;
   box-shadow: 5px 2px 33px 1px;
 }
-div.weekly-forcast .card {
+div.weekly-forecast .card {
   border-radius: 80px 80px;
   border-color: rgba(164, 115, 206, 0.7);
   border-width: 3px;
   box-shadow: 5px 2px 33px 1px;
 }
 
-div.weekly-forcast {
+div.weekly-forecast {
   margin-bottom: 40px;
 }
 

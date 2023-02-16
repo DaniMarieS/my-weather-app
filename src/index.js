@@ -40,7 +40,12 @@ function formatDate(timestamp) {
 }
 
 // City Search Bar
-
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "597c40c39084687093b091cd48b366f8";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=imperial&appid=${apiKey}`;
+  axios.get(apiURL).then(displayForecast);
+}
 function showCityWeather(response) {
   let cityName = response.data.name;
   let lowTemp = Math.round(response.data.main.temp_min);
@@ -68,12 +73,15 @@ function showCityWeather(response) {
     "alt",
     `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
   );
+  getForecast(response.data.coord);
 }
+
 function search(city) {
   let apiKey = "1e684f713ecf64c09805b72e982eb3d9";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
   axios.get(apiUrl).then(showCityWeather);
 }
+
 function handleSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-search-input");
@@ -156,7 +164,8 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 // weekly forecast
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
   let forecastHTML = `<div class= "row">`;
@@ -164,8 +173,8 @@ function displayForecast() {
     forecastHTML =
       forecastHTML +
       `<div class= "weekly-forecast">
-      <div class="col-2">
-          <div class="card text-center">
+      <div class="col-sm-2">
+          <div class="card text-center" style="width: 10rem">
             <div class="card-body">
               <h5 class="card-title" id ="weekly-forecast-day">${day}</h5>
               <p class="card-text">
@@ -187,4 +196,3 @@ function displayForecast() {
 }
 
 search("Denver");
-displayForecast();

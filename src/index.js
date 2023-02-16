@@ -158,7 +158,32 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 // weekly forecast
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = "forecast";
+  let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
+  let forecastHTML = `<div class= "row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class= "weekly-forecast">
+      <div class="col-2">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title" id ="weekly-forecast-day">${day}</h5>
+              <p class="card-text">
+                <img
+                  src="images/clouds_windy_sunny.svg"
+                  width="50px"
+                  alt="windy"
+                /><br />
+            <span class="weekly-forecast-high" id="forecast-high">59°</span> | <span class="weekly-forecast-low" id="forecast-low">38°</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 search("Denver");

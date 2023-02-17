@@ -164,32 +164,58 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 // weekly forecast
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  return days[day];
+}
+
 function displayForecast(response) {
   console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
+  let forecast = response.data.daily;
   let forecastHTML = `<div class= "row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class= "weekly-forecast">
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class= "weekly-forecast">
       <div class="col-sm-2">
           <div class="card text-center" style="width: 10rem">
             <div class="card-body">
-              <h5 class="card-title" id ="weekly-forecast-day">${day}</h5>
+              <h5 class="card-title" id ="weekly-forecast-day">${formatForecastDay(
+                forecastDay.dt
+              )}</h5>
               <p class="card-text">
                 <img
-                  src="images/clouds_windy_sunny.svg"
+                  src="http://openweathermap.org/img/wn/${
+                    forecastDay.weather[0].icon
+                  }@2x.png"
                   width="50px"
                   alt="windy"
                 /><br />
-            <span class="weekly-forecast-high" id="forecast-high">59°</span> | <span class="weekly-forecast-low" id="forecast-low">38°</span>
+            <span class="weekly-forecast-high" id="forecast-high">${Math.round(
+              forecastDay.temp.max
+            )}°</span> | <span class="weekly-forecast-low" id="forecast-low">${Math.round(
+          forecastDay.temp.min
+        )}°</span>
               </p>
             </div>
           </div>
         </div>
       </div>
       </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;

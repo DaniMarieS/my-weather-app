@@ -23,11 +23,13 @@ div.current-weather {
   border-width: 3px;
   box-shadow: 5px 2px 33px 1px;
 }
+
 div.weekly-forecast .card {
   border-radius: 80px 80px;
   border-color: rgba(164, 115, 206, 0.7);
   border-width: 3px;
   box-shadow: 5px 2px 33px 1px;
+  margin: 10px;
 }
 
 div.weekly-forecast {
@@ -36,6 +38,9 @@ div.weekly-forecast {
 
 div.current-weather .card-body {
   padding-top: 0px;
+}
+.container {
+  max-width: fit-content;
 }
 .weather-app-wrapper {
   max-width: 1100px;
@@ -94,6 +99,9 @@ div.current-weather .card-body {
 }
 .current-low {
   font-size: 20px;
+}
+.weather-forecast {
+  display: flex;
 }
 .coded-by {
   text-align: center;

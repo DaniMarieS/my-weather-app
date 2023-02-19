@@ -64,7 +64,7 @@ function showCityWeather(response) {
   showCurrentTemp.innerHTML = Math.round(fahrenheitTemperature);
   descriptionElement.innerHTML = response.data.weather[0].description;
   windElement.innerHTML = `${currentWindSpeed} mph`;
-  highLowTemp.innerHTML = `H: ${highTemp}° L: ${lowTemp}°`;
+  highLowTemp.innerHTML = `${highTemp}° | ${lowTemp}°`;
   weatherIcon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -110,7 +110,7 @@ function showWeather(response) {
   showCurrentTemp.innerHTML = `${currentTemp}`;
   descriptionElement.innerHTML = response.data.weather[0].description;
   windElement.innerHTML = `${currentWindSpeed} mph`;
-  highLowTemp.innerHTML = `H: ${highTemp}°  L: ${lowTemp}°`;
+  highLowTemp.innerHTML = `${highTemp}° | ${lowTemp}°`;
   weatherIcon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -191,9 +191,9 @@ function displayForecast(response) {
         forecastHTML +
         `<div class= "weekly-forecast">
       <div class="col-sm-2">
-          <div class="card text-center" style="width: 10rem">
+          <div class="card text-center" style="width: 12rem">
             <div class="card-body">
-              <h5 class="card-title" id ="weekly-forecast-day">${formatForecastDay(
+              <h5 class="card-title" class= "forecast-day" id ="weekly-forecast-day">${formatForecastDay(
                 forecastDay.dt
               )}</h5>
               <p class="card-text">

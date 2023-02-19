@@ -4,6 +4,7 @@ h5 {
 }
 h1 {
   text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.24);
+  font-family: "Quicksand medium";
 }
 a {
   text-decoration: none;
@@ -14,6 +15,7 @@ a:hover {
 }
 
 div.current-weather {
+  font-family: "quicksand";
   display: block;
   margin: 30px auto;
   margin-bottom: 50px;
@@ -33,6 +35,7 @@ div.weekly-forecast .card {
 }
 
 div.weekly-forecast {
+  font-family: "quicksand";
   margin-bottom: 40px;
 }
 
@@ -57,9 +60,13 @@ div.current-weather .card-body {
   margin-top: 10px;
 }
 .search-input {
+  font-family: "quicksand light";
   border-radius: 5px;
   border-width: 1px;
   padding: 2.5px;
+}
+.search-button {
+  font-family: "quicksand semibold";
 }
 .gps-emoji {
   font-size: 24px;
@@ -69,17 +76,21 @@ div.current-weather .card-body {
 }
 .update {
   font-size: 15px;
+  font-family: "quicksand light";
   color: rgba(0, 0, 0, 0.5);
 }
 .date {
   font-size: 20px;
+  font-family: "quicksand";
 }
 .current-temp {
   font-size: 45px;
+  font-family: "quicksand medium";
   line-height: 20px;
 }
 .degree-units {
   font-size: medium;
+  font-family: "quicksand medium";
   position: relative;
   top: -20px;
 }
@@ -94,6 +105,7 @@ div.current-weather .card-body {
 
 .description {
   font-size: 20px;
+  font-family: "quicksand";
   text-transform: capitalize;
   margin-bottom: 4px;
 }
@@ -103,8 +115,16 @@ div.current-weather .card-body {
 .weather-forecast {
   display: flex;
 }
+.forecast-day {
+  font-family: "quicksand";
+  font: weight 900px;
+}
+.weekly-forecast-high .weekly-forecast-low {
+  font-family: "quicksand light";
+}
 .coded-by {
   text-align: center;
+  font-family: "quicksand";
   color: rgba(0, 0, 0, 0.5);
 }
 

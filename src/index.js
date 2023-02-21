@@ -111,6 +111,7 @@ function showWeather(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   windElement.innerHTML = `${currentWindSpeed} mph`;
   highLowTemp.innerHTML = `${highTemp}° | ${lowTemp}°`;
+  weatherIcon.setAttribute("width", `80px`);
   weatherIcon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -201,7 +202,7 @@ function displayForecast(response) {
                   src="http://openweathermap.org/img/wn/${
                     forecastDay.weather[0].icon
                   }@2x.png"
-                  width="50px"
+                  width="70px"
                   alt="windy"
                 /><br />
             <span class="weekly-forecast-high" id="forecast-high">${Math.round(

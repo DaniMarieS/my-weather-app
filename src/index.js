@@ -119,6 +119,7 @@ function showWeather(response) {
     "alt",
     `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
   );
+  getForecast(response.data.coord);
 }
 
 function retrievePosition(position) {

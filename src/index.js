@@ -67,7 +67,7 @@ function showCityWeather(response) {
   highLowTemp.innerHTML = `${highTemp}° | ${lowTemp}°`;
   weatherIcon.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `images/${response.data.weather[0].icon}.png`
   );
   weatherIcon.setAttribute(
     "alt",
@@ -111,10 +111,9 @@ function showWeather(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   windElement.innerHTML = `${currentWindSpeed} mph`;
   highLowTemp.innerHTML = `${highTemp}° | ${lowTemp}°`;
-  weatherIcon.setAttribute("width", `80px`);
   weatherIcon.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `images/${response.data.weather[0].icon}.png`
   );
   weatherIcon.setAttribute(
     "alt",
@@ -199,10 +198,8 @@ function displayForecast(response) {
               )}</h5>
               <p class="card-text">
                 <img
-                  src="http://openweathermap.org/img/wn/${
-                    forecastDay.weather[0].icon
-                  }@2x.png"
-                  width="70px"
+                  src="images/${forecastDay.weather[0].icon}.png"
+                  width="58px"
                   alt="windy"
                 /><br />
             <span class="weekly-forecast-high" id="forecast-high">${Math.round(

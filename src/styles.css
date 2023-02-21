@@ -95,6 +95,7 @@ div.current-weather .card-body {
   font-size: 45px;
   font-family: "quicksand medium";
   line-height: 20px;
+  margin-top: 10px;
 }
 .degree-units {
   font-size: medium;
@@ -102,6 +103,7 @@ div.current-weather .card-body {
   position: relative;
   top: -20px;
 }
+
 .current-weather .active {
   color: black;
   cursor: default;
@@ -147,6 +149,7 @@ div.current-weather .card-body {
   text-decoration: none;
   color: rgba(164, 115, 206);
 }
-.image-by {
+.image-by,
+.icons-by {
   font-size: small;
 }

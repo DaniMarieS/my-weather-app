@@ -73,6 +73,9 @@ div.current-weather .card-body {
   border-width: 1px;
   padding: 2.5px;
 }
+.search-input:focus {
+  outline-color: blueviolet;
+}
 .search-button {
   font-family: "quicksand semibold";
 }
@@ -95,7 +98,6 @@ div.current-weather .card-body {
   font-size: 45px;
   font-family: "quicksand medium";
   line-height: 20px;
-  margin-top: 10px;
 }
 .degree-units {
   font-size: medium;
@@ -103,7 +105,6 @@ div.current-weather .card-body {
   position: relative;
   top: -20px;
 }
-
 .current-weather .active {
   color: black;
   cursor: default;
@@ -138,9 +139,6 @@ div.current-weather .card-body {
   color: rgba(0, 0, 0, 0.5);
 }
 
-.search-input:focus {
-  outline-color: blueviolet;
-}
 .code-link {
   text-decoration: none;
   color: rgba(164, 115, 206, 0.7);

@@ -1,5 +1,4 @@
 // Date & Time
-
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let days = [
@@ -11,23 +10,8 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
-  let months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
+
   let currentDay = days[date.getDay()];
-  let currentMonth = months[date.getMonth()];
-  let currentDate = date.getDate();
   let hour = date.getHours();
   if (hour < 10) {
     hour = `0${hour}`;
@@ -88,9 +72,6 @@ function handleSubmit(event) {
   search(cityInput.value);
 }
 
-let citySearch = document.querySelector("#city-search-bar");
-citySearch.addEventListener("submit", handleSubmit);
-
 // Geolocation button
 function showWeather(response) {
   let cityName = response.data.name;
@@ -135,10 +116,7 @@ function findCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
 
-let geolocationButton = document.querySelector("#geolocation-button");
-geolocationButton.addEventListener("click", findCurrentLocation);
 // °F/C change
-
 function displayCelciusTemperature(event) {
   event.preventDefault();
   fahrenheitLink.classList.remove("active");
@@ -155,14 +133,6 @@ function displayFahrenheitTemperature(event) {
   let showCurrentTemp = document.querySelector("#temp-high");
   showCurrentTemp.innerHTML = Math.round(fahrenheitTemperature);
 }
-
-let fahrenheitTemperature = null;
-
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", displayCelciusTemperature);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 // weekly forecast
 function formatForecastDay(timestamp) {
@@ -219,5 +189,19 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
+let citySearch = document.querySelector("#city-search-bar");
+citySearch.addEventListener("submit", handleSubmit);
+
+let geolocationButton = document.querySelector("#geolocation-button");
+geolocationButton.addEventListener("click", findCurrentLocation);
+
+let fahrenheitTemperature = null;
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", displayCelciusTemperature);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 search("Denver");
